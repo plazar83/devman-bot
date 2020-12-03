@@ -21,7 +21,8 @@ while True:
     else:
         params = {"timestamp": request_timestamp}
     try:
-        response = requests.get(url, headers=headers, params=params, timeout=timeout)
+        response = requests.get(
+            url, headers=headers, params=params, timeout=timeout)
         response.raise_for_status()
         data_json = response.json()
         if data_json['status'] == 'timeout':
@@ -29,9 +30,12 @@ while True:
         if data_json['status'] == 'found':
             lesson_title = data_json['new_attempts'][0]['lesson_title']
             is_negative = data_json['new_attempts'][0]['is_negative']
-            lesson_url = "https://dvmn.org" + data_json['new_attempts'][0]['lesson_url']
+            lesson_url = "https://dvmn.org" + data_json['new_attempts'][0][
+                'lesson_url']
             request_timestamp = data_json['last_attempt_timestamp']
-            message_list = [f'Преподаватель проверил работу *"{lesson_title}".*']
+            message_list = [
+                f'Преподаватель проверил работу *"{lesson_title}".*'
+            ]
             if is_negative:
                 message_list.append('К сожалению, в работе есть ошибки. 🙈')
             else:
@@ -40,7 +44,8 @@ while True:
             message_list.append('\n' + lesson_url)
 
             message = '\n'.join(message_list)
-            bot.send_message(chat_id=chat_id, text=message, parse_mode='Markdown')
+            bot.send_message(
+                chat_id=chat_id, text=message, parse_mode='Markdown')
     except ReadTimeout:
         continue
     except ConnectionError:
