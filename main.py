@@ -4,10 +4,10 @@ import time
 import telegram
 import os
 
-token_devman = os.getenv("TOKEN_DEVMAN")
-telegram_token = os.getenv("TOKEN_BOT")
+token_devman = os.environ["TOKEN_DEVMAN"]
+telegram_token = os.environ['TOKEN_BOT']
 bot = telegram.Bot(token=telegram_token)
-chat_id = os.getenv("CHAT_ID")
+chat_id = os.environ['CHAT_ID']
 
 bot.send_message(chat_id=chat_id, text="Bot start", parse_mode='Markdown')
 
