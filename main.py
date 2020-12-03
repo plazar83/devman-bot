@@ -4,10 +4,10 @@ import time
 import telegram
 import os
 
-token_devman = os.getenv("TOKEN_DEVMAN")
-telegram_token = os.getenv("BOT_TOKEN")
+token_devman = os.environ("TOKEN_DEVMAN")
+telegram_token = os.environ("BOT_TOKEN")
 bot = telegram.Bot(token=telegram_token)
-chat_id = os.getenv("CHAT_ID")
+chat_id = os.environ("CHAT_ID")
 
 url = 'https://dvmn.org/api/long_polling/'
 headers = {'Authorization': f'Token {token_devman}'}
