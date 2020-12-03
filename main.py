@@ -10,7 +10,6 @@ bot = telegram.Bot(token=telegram_token)
 chat_id = os.getenv("CHAT_ID")
 
 url = 'https://dvmn.org/api/long_polling/'
-headers = {"Authorization": "Token aacda65f149e091a338b19bf27225fbfd94ecc57"}
 headers = {'Authorization': f'Token {token_devman}'}
 timeout = 100
 request_timestamp = None
