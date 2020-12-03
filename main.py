@@ -9,8 +9,6 @@ telegram_token = os.environ['TOKEN_BOT']
 bot = telegram.Bot(token=telegram_token)
 chat_id = os.environ['CHAT_ID']
 
-bot.send_message(chat_id=chat_id, text="Bot start", parse_mode='Markdown')
-
 url = 'https://dvmn.org/api/long_polling/'
 headers = {'Authorization': f'Token {token_devman}'}
 timeout = 100
