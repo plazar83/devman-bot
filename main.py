@@ -4,7 +4,7 @@ import time
 import telegram
 import os
 
-token_devman = os.environ("TOKEN_DEVMAN")
+token_devman = os.getenv("TOKEN_DEVMAN")
 telegram_token = os.getenv("TOKEN_BOT")
 bot = telegram.Bot(token=telegram_token)
 chat_id = os.getenv("CHAT_ID")
