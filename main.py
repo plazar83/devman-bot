@@ -14,7 +14,7 @@ timeout = 100
 request_timestamp = None
 
 while True:
-    if request_timestamp == "None":
+    if not request_timestamp:
         params = {"timestamp": time.time()}
     else:
         params = {"timestamp": request_timestamp}
