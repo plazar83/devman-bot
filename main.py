@@ -14,6 +14,7 @@ headers = {'Authorization': f'Token {token_devman}'}
 timeout = 100
 request_timestamp = None
 
+logging.basicConfig(level=logging.DEBUG)
 logging.info('Бот запустился. Всё идёт по плану.')
 
 while True:
