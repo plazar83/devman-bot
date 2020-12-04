@@ -3,6 +3,7 @@ from requests.exceptions import ReadTimeout
 import time
 import telegram
 import os
+import logging
 
 token_devman = os.environ["TOKEN_DEVMAN"]
 telegram_token = os.environ['TOKEN_BOT']
@@ -12,6 +13,8 @@ url = 'https://dvmn.org/api/long_polling/'
 headers = {'Authorization': f'Token {token_devman}'}
 timeout = 100
 request_timestamp = None
+
+logging.info('Бот запустился. Всё идёт по плану.')
 
 while True:
     if not request_timestamp:
